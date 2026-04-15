@@ -80,3 +80,32 @@ body {
   color: #64748b;
   font-size: 0.95rem;
 }
+
+#install-btn {
+  position: fixed;
+  left: 50%;
+  bottom: calc(1.25rem + env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  appearance: none;
+  border: 0;
+  background: #38bdf8;
+  color: #0f172a;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.35);
+  touch-action: manipulation;
+  z-index: 10;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+#install-btn:hover {
+  background: #0ea5e9;
+  transform: translateX(-50%) translateY(-1px);
+}
+
+#install-btn[hidden] {
+  display: none;
+}
