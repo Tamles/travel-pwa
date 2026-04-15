@@ -1,0 +1,75 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  color: #e2e8f0;
+  background:
+    radial-gradient(circle at top, #1e293b 0%, #0f172a 60%, #020617 100%);
+  min-height: 100dvh;
+  display: flex;
+}
+
+#app {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.home {
+  text-align: center;
+  max-width: 32rem;
+}
+
+.home h1 {
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.tagline {
+  color: #94a3b8;
+  margin: 0 0 2rem;
+  font-size: 1.05rem;
+}
+
+.status {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin: 0 0 1.5rem;
+}
+
+#install-btn {
+  appearance: none;
+  border: 0;
+  background: #38bdf8;
+  color: #0f172a;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+#install-btn:hover {
+  background: #0ea5e9;
+  transform: translateY(-1px);
+}
