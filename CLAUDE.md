@@ -31,6 +31,12 @@ Vanilla JS + Vite + `vite-plugin-pwa` (Workbox under the hood). No framework, no
   2. **Install UX** — listens for `beforeinstallprompt`, stashes the event, reveals the button, then calls `deferredPrompt.prompt()` on click. Also detects standalone display mode and reacts to `appinstalled`.
 - `vite.config.js` is the source of truth for the web app manifest (name, theme, icons). Change the manifest there, not in a separate JSON file — `vite-plugin-pwa` generates `manifest.webmanifest` from this config at build time.
 
+## Deployment
+
+Deployed to GitHub Pages at `https://<user>.github.io/travel-pwa/` via `.github/workflows/deploy.yml` on every push to `main`. Because Pages serves the app from the `/travel-pwa/` subpath, `vite.config.js` sets `base: '/travel-pwa/'` and the manifest `start_url`/`scope` are both `/travel-pwa/` — keep these three in sync if the repo is ever renamed. The Pages source must be set to "GitHub Actions" in repo Settings → Pages (not a branch).
+
+Verify a build locally with `npm run build && npm run preview` — preview serves at `http://localhost:4173/travel-pwa/`, which exercises the same base path Pages uses.
+
 ## PWA icons
 
 Icons live in `public/` and are referenced by the manifest in `vite.config.js`:
